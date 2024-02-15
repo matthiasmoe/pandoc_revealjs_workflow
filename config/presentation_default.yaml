@@ -1,0 +1,6 @@
+toc: true
+# shift-heading-level-by: 1
+toc-depth: 1
+slide-level: 2
+to: revealjs
+standalone: True
