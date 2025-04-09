@@ -2,5 +2,8 @@ toc: true
 # shift-heading-level-by: 1
 toc-depth: 1
 slide-level: 2
+# slide-level: 0
 to: revealjs
 standalone: True
+html-math-method:
+  method: mathjax

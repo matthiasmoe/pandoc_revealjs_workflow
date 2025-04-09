@@ -18,6 +18,12 @@ I would also appreciate the contribution of others by containing the wiki or add
 
 ## Setup
 
+### Install Pandoc
+
+Download the installer from the [release pages](https://github.com/jgm/pandoc/releases).
+We are using the version 3.6.2 in our current setup
+
+
 ### reveal.js
 
 reveal.js is already added as a submodule in this project. It can be initialized by using the command
@@ -67,3 +73,9 @@ The terminal will display the startup information and provide an insight of how 
 **Tip:** If you followed my recommendation of making an external folder, this can help to navigate through your project. Let's assume, you have the folder `external`. By using `http://localhost:8000/somefilename.html/external` you receive navigation window in your browser that allows you to navigate freely around.
 
 ### Pandoc
+
+We recommend following command to convert Markdown into reveal.js:
+
+```bash
+ $REVEALJS_PATH='<PATH to this dir>' pandoc -d ~/tmp/pandoc_revealjs_workflow/config/presentation_default.yaml -t revealjs --template ~/tmp/pandoc_revealjs_workflow/templates/revealjs.pandoc
+```

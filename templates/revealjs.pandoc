@@ -22,66 +22,18 @@ $endif$
     .reveal .sourceCode {  /* see #7635 */
       overflow: visible;
     }
-    $styles.html()$
-
-    .reveal .footer {
+    .title-slide  {  /* see #7635 */
       position: absolute;
-      bottom: 1em;
-      left: 1em;
-      font-size: 0.7em;
-      width: 100%;
-      border-top: black solid thin;
-      text-align: left
+      top: 50%;
     }
-
-    .reveal .slide {
-      text-align: left;
-      height: 100%;
-      top: 0;
-      margin-top: 0;
-    }
-
-    h2, h1 {
-      text-align: center;
-      margin-bottom: 1.5em;
-      padding-bottom: 0.2em;
-    }
-
-    p:has(img){
-      text-align: center;
-    }
-
-    #TOC {
-      height: 100%;
-      margin-top:10%;
-    }
-
-    .vcenter{
-      height:80%;
-      width: inherit;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: left;
-      align-self: stretch;
-    }
-
-    .reveal .slide-number{
-      font-size: 50pt;
-    }
-
-    .title-slide{
-      display: flex !important;
-      justify-content: center;
-      align-items: center
-    }
-
+    $styles.html()$
   </style>
 $if(theme)$
   <link rel="stylesheet" href="$revealjs-url$/dist/theme/$theme$.css" id="theme">
 $else$
   <link rel="stylesheet" href="$revealjs-url$/dist/theme/black.css" id="theme">
 $endif$
+<link rel="stylesheet" href="$revealjs-url$/plugin/highlight/monokai.css" />
 $for(css)$
   <link rel="stylesheet" href="$css$"/>
 $endfor$
@@ -140,22 +92,8 @@ $body$
 $if(mathjax)$
   <script src="$revealjs-url$/plugin/math/math.js"></script>
 $endif$
+<script src="$revealjs-url$/plugin/highlight/highlight.js"></script>
 
-  <script>
-    function whenLoaded(){
-      var content = document.querySelectorAll('.slide.level2:not(.slide-background)');
-      [].forEach.call(content, function(div){
-        var content = div.querySelectorAll(':scope>*:not(h1,h2,.footer,.notes)');
-        var vcenter = document.createElement('div');
-        vcenter.setAttribute('class', 'vcenter');
-        div.appendChild(vcenter);
-        [].forEach.call(content, function(obj){
-          vcenter.appendChild(obj);
-        })
-      })
-    };
-    window.onload = whenLoaded
-  </script>
 
   <script>
 
@@ -379,7 +317,8 @@ $if(mathjax)$
 $endif$
           RevealNotes,
           RevealSearch,
-          RevealZoom
+          RevealZoom,
+          RevealHighlight
         ]
       });
     </script>
